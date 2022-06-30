@@ -17,5 +17,10 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/webjump/assessment-frontend#readme"
+  "homepage": "https://bitbucket.org/webjump/assessment-frontend#readme",
+  "devDependencies": {
+    "grunt": "^1.5.3",
+    "grunt-contrib-uglify": "^5.2.2",
+    "grunt-contrib-watch": "^1.1.0"
+  }
 }
