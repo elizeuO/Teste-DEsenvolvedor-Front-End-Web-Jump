@@ -3,3 +3,5 @@ npm-debug.log
 *.swp
 
 .vscode/settings.json
+
+public/assets/js/dist/desafio-frontend.dev.js
