@@ -12,8 +12,8 @@
     },
     {
       "id": 3,
-      "name": "Calçados",
-      "path": "calcados"
+      "name": "Sapatos",
+      "path": "sapatos"
     }
   ]
 }
