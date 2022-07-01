@@ -1,0 +1,76 @@
+/*-------------------------------------------------------------------
+Typography
+-------------------------------------------------------------------*/
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: OpenSans-ExtraBold;
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+/*-------------------------------------------------------------------
+Colors
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+Flex
+-------------------------------------------------------------------*/
+.l-flex {
+  display: flex;
+}
+
+.l-flex--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.l-flex--stretch {
+  align-items: stretch;
+}
+
+.l-flex--negative {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.l__col-9, .l__col-3 {
+  padding: 12px;
+}
+
+.l__col-3 {
+  width: 25%;
+}
+
+.l__col-9 {
+  width: 75%;
+}
+
+/*-------------------------------------------------------------------
+Components
+-------------------------------------------------------------------*/
+body {
+  font-size: 16px;
+  font-family: OpenSans-Regular;
+}
+
+.c-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.c-header {
+  background: #231F20;
+  color: #fff;
+}
+.c-header .c-header__top {
+  padding: 6px 0;
+  text-align: right;
+  font-size: 14px;
+}
+.c-header .c-header__top a {
+  text-decoration: underline;
+}

@@ -1,0 +1,107 @@
+/*-------------------------------------------------------------------
+Typography
+-------------------------------------------------------------------*/
+
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(../fonts/OpenSans-Regular.ttf)
+}
+
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url(../fonts/OpenSans-Bold.ttf)
+}
+
+@font-face {
+    font-family: OpenSans-ExtraBold;
+    src: url(../fonts/OpenSans-ExtraBold.ttf)
+}
+
+$mainFont: OpenSans-Regular;
+$boldFont: OpenSans-Bold;
+$extraBoldFont: OpenSans-ExtraBold;
+
+$contentFontSize: 16px;
+
+/*-------------------------------------------------------------------
+Colors
+-------------------------------------------------------------------*/
+
+$colorBlack: #000;
+$colorMatteBlack:#231F20;
+$colorWhite: #fff;
+$colorDarkRed: #CB0D1F;
+$colorLightRed: #ED1A39;
+$colorSeaGreen: #00A8A9;
+$colorBlue: #1E2B50;
+$colorOrange: #F26324;
+
+
+/*-------------------------------------------------------------------
+Flex
+-------------------------------------------------------------------*/
+
+.l-flex {
+    display: flex;
+}
+
+.l-flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+.l-flex--stretch {
+    align-items: stretch;
+}
+
+.l-flex--negative {
+    margin-left: -12px;
+    margin-right: -12px;
+}
+
+%flexColPatterns {
+    padding: 12px;
+}
+
+.l__col-3 {
+    @extend %flexColPatterns;
+    width: 25%;
+}
+
+.l__col-9 {
+    @extend %flexColPatterns;
+    width: 75%;
+}
+
+/*-------------------------------------------------------------------
+Components
+-------------------------------------------------------------------*/
+
+body {
+    font-size: $contentFontSize;
+    font-family: $mainFont;
+}
+
+.c-container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.c-header {
+    background: $colorMatteBlack;
+    color: $colorWhite;
+
+    .c-header__top {
+        padding: 6px 0;
+        text-align: right;
+        font-size: 14px;
+    
+        a {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+
