@@ -1,1 +1,2 @@
-/*! assessment-frontend 2022-06-30 */
+/*! assessment-frontend 2022-07-01 */
+function getAPIURL(e){let t=new XMLHttpRequest;return t.open("GET",e,!1),t.send(),t.responseText}function renderNavigationsWithCategories(i){let e=document.querySelectorAll(".js-render-nav-categories");null!==e&&e.forEach(e=>{let t='<li><a href="/">Página inicial</a> </li>';i.forEach(e=>{t+='<li><a href="/categoria/'+e.path+'">'+e.name+"</a></li>",console.log(t)}),t+='<li><a href="">Contato</a></li>',e.innerHTML=t})}function init(){var e=getAPIURL("http://localhost:8888/api/V1/categories/list");renderNavigationsWithCategories(JSON.parse(e).items)}init();
