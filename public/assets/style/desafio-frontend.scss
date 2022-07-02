@@ -238,7 +238,7 @@ select {
 .c-section {
     padding: 15px 0 27px;
 
-    nav {
+    aside nav {
         padding: 12px 6px;
         height: 100%;
         background: #E2DEDC;
@@ -279,6 +279,37 @@ select {
             height: 281px;
             ;
         }
+    }
+}
+
+.c-section--product{
+    @extend .c-section;
+
+    h1, h2{
+        color:$colorDarkRed;
+    }
+
+    aside nav{
+        background: none;
+        border: 1px solid #E2DEDC;
+    }
+}
+
+.c-breadcrumb{
+    padding: 10px 0;
+    color: #ACACAC;
+    font-size: 14px;;
+
+    a{
+        color: $colorBlack;
+
+        &:hover, &:focus{
+            color: $colorSeaGreen;
+        }
+    }
+
+    .c-breadcrumb__current{
+        color: $colorDarkRed;
     }
 }
 

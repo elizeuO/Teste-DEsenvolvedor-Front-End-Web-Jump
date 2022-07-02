@@ -188,20 +188,20 @@ select {
   padding-right: 0;
 }
 
-.c-section {
+.c-section, .c-section--product {
   padding: 15px 0 27px;
 }
-.c-section nav {
+.c-section aside nav, .c-section--product aside nav {
   padding: 12px 6px;
   height: 100%;
   background: #E2DEDC;
 }
-.c-section nav ul li {
+.c-section aside nav ul li, .c-section--product aside nav ul li {
   position: relative;
   padding: 3px 18px;
   font-size: 18px;
 }
-.c-section nav ul li:before {
+.c-section aside nav ul li:before, .c-section--product aside nav ul li:before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -213,13 +213,37 @@ select {
   border-radius: 50%;
   transform: translateY(-50%);
 }
-.c-section nav,
-.c-section main {
+.c-section nav, .c-section--product nav,
+.c-section main,
+.c-section--product main {
   padding-bottom: 0;
 }
-.c-section main .c-empty-content {
+.c-section main .c-empty-content, .c-section--product main .c-empty-content {
   background: #ACACAC;
   height: 281px;
+}
+
+.c-section--product h1, .c-section--product h2 {
+  color: #CB0D1F;
+}
+.c-section--product aside nav {
+  background: none;
+  border: 1px solid #E2DEDC;
+}
+
+.c-breadcrumb {
+  padding: 10px 0;
+  color: #ACACAC;
+  font-size: 14px;
+}
+.c-breadcrumb a {
+  color: #000;
+}
+.c-breadcrumb a:hover, .c-breadcrumb a:focus {
+  color: #00A8A9;
+}
+.c-breadcrumb .c-breadcrumb__current {
+  color: #CB0D1F;
 }
 
 .c-footer {
