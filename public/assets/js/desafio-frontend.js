@@ -89,6 +89,7 @@ function renderCategoryPageContent() {
 
   renderBreadcrumb(categoryName);
   renderFilterContent(productData, allCategories);
+  renderProductContent(productData, categoryItem);
 }
 
 //Add content to breadcrumb
@@ -103,6 +104,48 @@ function renderBreadcrumb(categoryName) {
     '<a href="/">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">' +
     categoryName +
     "</span>";
+}
+
+function renderProductContent(productData, categoryItem) {
+  let element = document.querySelector(".js-render-product-content");
+
+  if (null === element) {
+    return;
+  }
+
+  let content =
+    "<h1>" +
+    categoryItem.name +
+    "</h1>" +
+    '<div class="c-sort-bar l-flex l-flex--center l-flex--wrap">' +
+    '<div class="c-sort-bar__display">' +
+    '<div class="c-sort-bar__display-button active"><i class="fa-solid fa-grip"></i></div>' +
+    '<div class="c-sort-bar__display-button"><i class="fa-solid fa-list"></i></div></div>' +
+    '<div class="c-sort-bar_data-option">Ordernar por' +
+    '<select><option value="Preço">Preço</option></select>' +
+    "</div></div>";
+
+  let productListWrapper =  '<div class="js-product-wrapper">' 
+    +'<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch">';
+
+
+  productListWrapper += renderProducts(productData) + '</div>';
+
+  content += productListWrapper;
+
+  element.innerHTML = content;
+}
+
+function renderProducts(productData) {
+  let products = productData.items;
+  let content = '';
+
+  products.forEach((product) => {
+    content +='<article class="l__col-3"><img src="/assets/img/' 
+    +product.image + '"></article>';
+  });
+
+  return content;
 }
 
 //Add content to category page filter
@@ -148,10 +191,29 @@ function setColorListElements(productData) {
     }
   });
 
-  console.log(colors);
-
   colors.forEach((color) => {
-    result += '<li>' + color + '</li>';
+    result += "<li>" + color + "</li>";
+  });
+
+  return result;
+}
+
+//Return list items with gender content for the filter
+function setGenderListElements(productData) {
+  let productItems = productData.items;
+  let result = "";
+  let genders = [];
+
+  productItems.forEach((productItem) => {
+    let value = productItem.filter[0];
+
+    if (!genders.includes(value.gender)) {
+      genders.push(value.gender);
+    }
+  });
+
+  genders.forEach((gender) => {
+    result += "<li>" + gender + "</li>";
   });
 
   return result;
