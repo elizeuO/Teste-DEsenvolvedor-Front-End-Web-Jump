@@ -223,12 +223,20 @@ select {
   height: 281px;
 }
 
-.c-section--product h1, .c-section--product h2 {
-  color: #CB0D1F;
+.c-section--product h1,
+.c-section--product h2 {
+  color: #ED1A39;
 }
 .c-section--product aside nav {
   background: none;
   border: 1px solid #E2DEDC;
+}
+.c-section--product aside nav h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .c-breadcrumb {

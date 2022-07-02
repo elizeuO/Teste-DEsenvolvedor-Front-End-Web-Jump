@@ -23,7 +23,7 @@ function getMockAPIProductList(ID) {
 }
 
 //Render page link items and categories items
-function renderNavigationsWithCategories() {
+function renderNavigationWithCategories() {
   let categories = getMockAPICategoryList();
 
   let elements = document.querySelectorAll(".js-render-nav-categories");
@@ -35,18 +35,26 @@ function renderNavigationsWithCategories() {
   elements.forEach((element) => {
     let result = '<li><a href="/">Página inicial</a> </li>';
 
-    categories.forEach((category) => {
-      result +=
-        '<li><a href="/categoria.html?id=' +
-        category.id +
-        '">' +
-        category.name +
-        "</a></li>";
-    });
-
-    result += '<li><a href="">Contato</a></li>';
+    result +=
+      setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
     element.innerHTML = result;
   });
+}
+
+//Return list items with category links
+function setCategoryListElements(categories) {
+  let result = "";
+
+  categories.forEach((category) => {
+    result +=
+      '<li><a href="/categoria.html?id=' +
+      category.id +
+      '">' +
+      category.name +
+      "</a></li>";
+  });
+
+  return result;
 }
 
 //Check if is page "Categoria" and validates
@@ -63,6 +71,7 @@ function isValidCategoryPage(searchParams, paramName) {
   }
 }
 
+//Add content to category page
 function renderCategoryPageContent() {
   const paramName = "id";
   let searchParams = new URLSearchParams(window.location.search);
@@ -73,34 +82,84 @@ function renderCategoryPageContent() {
 
   const categoryID = searchParams.get("id");
   const allCategories = getMockAPICategoryList();
-  
-  //let productData = getMockAPIProductList(1);
-
+  const productData = getMockAPIProductList(categoryID);
   const categoryItem = allCategories[categoryID - 1];
+
   let categoryName = categoryItem.name;
 
   renderBreadcrumb(categoryName);
+  renderFilterContent(productData, allCategories);
 }
 
-function renderBreadcrumb(categoryName){
+//Add content to breadcrumb
+function renderBreadcrumb(categoryName) {
+  let element = document.querySelector(".js-render-breadcrumb");
 
-    let element = document.querySelector('.js-render-breadcrumb');
+  if (null === element) {
+    return;
+  }
 
-    if(null === element){
-      return;
+  element.innerHTML =
+    '<a href="/">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">' +
+    categoryName +
+    "</span>";
+}
+
+//Add content to category page filter
+function renderFilterContent(productData, categories) {
+  let element = document.querySelector(".js-render-product-filter");
+
+  if (null === element) {
+    return;
+  }
+
+  //Get filter parametters
+  let filterParams = productData.filters.map((item) => {
+    return Object.keys(item)[0];
+  });
+
+  let content = "<h3>Categorias</h3><ul>";
+  content += setCategoryListElements(categories) + "</ul>";
+
+  if (filterParams.includes("color")) {
+    content +=
+      "<h3>Cores</h3><ul>" + setColorListElements(productData) + "</ul>";
+  }
+
+  if (filterParams.includes("gender")) {
+    content +=
+      "<h3>Cores</h3><ul>" + setGenderListElements(productData) + "</ul>";
+  }
+
+  element.innerHTML = content;
+}
+
+//Return list items with color content for the filter
+function setColorListElements(productData) {
+  let productItems = productData.items;
+  let result = "";
+  let colors = [];
+
+  productItems.forEach((productItem) => {
+    let value = productItem.filter[0];
+
+    if (!colors.includes(value.color)) {
+      colors.push(value.color);
     }
+  });
 
-    element.innerHTML = '<a href="/">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">'+categoryName+'</span>';
-    
-  }
+  console.log(colors);
 
-  function renderFilterContent(){
+  colors.forEach((color) => {
+    result += '<li>' + color + '</li>';
+  });
 
-  }
+  return result;
+}
 
 //Start main functions
 function init() {
-  renderNavigationsWithCategories();
+  renderNavigationWithCategories();
   renderCategoryPageContent();
 }
 
