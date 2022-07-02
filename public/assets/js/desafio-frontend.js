@@ -126,7 +126,7 @@ function renderProductContent(productData, categoryItem) {
     "</div></div>";
 
   let productListWrapper =  '<div class="js-product-wrapper">' 
-    +'<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch">';
+    +'<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative">';
 
 
   productListWrapper += renderProducts(productData) + '</div>';
@@ -140,9 +140,17 @@ function renderProducts(productData) {
   let products = productData.items;
   let content = '';
 
+  console.log(products)
+
   products.forEach((product) => {
-    content +='<article class="l__col-3"><img src="/assets/img/' 
-    +product.image + '"></article>';
+    content +='<article class="l__col-3">'+
+    '<div class= "c-product js-product">'+
+    '<div class= "c-product__img l-flex l-flex--center"><img src="/assets/img/'+
+    product.image + '"></div>'+
+    '<div class="c-product__info"><h2>'+product.name+'</h2>'+
+    '<div class="c-product__price">R$ '+product.price+'</div>'+
+    '<div class="c-product__button">Comprar</div>'+
+    '</div></div></article>';
   });
 
   return content;
