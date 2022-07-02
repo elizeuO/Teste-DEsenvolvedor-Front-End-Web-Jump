@@ -31,7 +31,7 @@ Colors
 /*-------------------------------------------------------------------
 Transition
 -------------------------------------------------------------------*/
-.c-header .c-header__mid .c-search .c-search__submit, a {
+.c-section--product .c-sort-bar__display-button, .c-header .c-header__mid .c-search .c-search__submit, a {
   transition: all 300ms;
 }
 
@@ -49,6 +49,10 @@ Flex
 
 .l-flex--stretch {
   align-items: stretch;
+}
+
+.l-flex--wrap {
+  flex-wrap: wrap;
 }
 
 .l-flex--negative {
@@ -87,6 +91,14 @@ Flex
 /*-------------------------------------------------------------------
 Components
 -------------------------------------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
 body {
   font-size: 16px;
   font-family: openSans;
@@ -228,15 +240,69 @@ select {
   color: #ED1A39;
 }
 .c-section--product aside nav {
+  padding-left: 20px;
+  padding-right: 20px;
   background: none;
   border: 1px solid #E2DEDC;
 }
 .c-section--product aside nav h2 {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   font-size: 24px;
-  text-transform: uppercase;
   font-weight: 600;
+}
+.c-section--product aside nav h2,
+.c-section--product aside nav h3 {
+  text-transform: uppercase;
+}
+.c-section--product aside nav h3 {
+  color: #00A8A9;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.c-section--product aside nav ul li {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #626262;
+}
+.c-section--product aside nav ul li:before {
+  left: 0;
+  background: #626262;
+}
+.c-section--product h1 {
+  font-size: 32px;
+}
+.c-section--product h1,
+.c-section--product .c-sort-bar {
+  border-bottom: 1px solid #E2DEDC;
+  padding-bottom: 10px;
+}
+.c-section--product .c-sort-bar__display-button {
+  display: inline-block;
+  margin-right: 10px;
+  color: #818286;
+  font-size: 20px;
+  cursor: pointer;
+}
+.c-section--product .c-sort-bar__display-button:hover, .c-section--product .c-sort-bar__display-button:focus, .c-section--product .c-sort-bar__display-button.active {
+  color: #00A8A9;
+}
+.c-section--product .c-sort-bar .c-sort-bar__display {
+  margin-right: auto;
+}
+.c-section--product .c-sort-bar .c-sort-bar_data-option {
+  margin-left: auto;
+  color: #808185;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.c-section--product .c-sort-bar .c-sort-bar_data-option select {
+  margin-left: 5px;
+  padding: 3px 6px;
+  font-size: 14px;
+  border: 1px solid #E2DEDC;
+  border-radius: 5px;
 }
 
 .c-breadcrumb {
