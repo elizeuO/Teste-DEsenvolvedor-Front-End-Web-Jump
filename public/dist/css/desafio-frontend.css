@@ -100,13 +100,18 @@ Components
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
   font-size: 16px;
   font-family: openSans;
+}
+
+img {
+  max-width: 100%;
 }
 
 ul {
@@ -251,11 +256,12 @@ select {
 }
 
 .c-section--product {
+  padding-top: 20px;
   padding-bottom: 0;
 }
 .c-section--product h1,
 .c-section--product h2 {
-  color: #ED1A39;
+  color: #CB0D1F;
 }
 .c-section--product aside nav {
   padding-left: 20px;
@@ -275,8 +281,8 @@ select {
   text-transform: uppercase;
 }
 .c-section--product aside nav h3 {
-  color: #80bdb8;
-  margin: 10px 0;
+  color: #649093;
+  margin: 15px 0;
   font-weight: 600;
 }
 .c-section--product aside nav ul {
@@ -294,8 +300,8 @@ select {
 }
 .c-section--product aside nav ul li[color] {
   display: block;
-  padding: 1px;
-  height: 24px;
+  padding: 1.7px;
+  height: 30px;
   width: 33.33%;
 }
 .c-section--product aside nav ul li[color]:before {
@@ -327,7 +333,7 @@ select {
   background: #dfd48d;
 }
 .c-section--product h1 {
-  margin-top: 5px;
+  margin-top: 0;
   font-size: 32px;
 }
 .c-section--product h1,
@@ -356,8 +362,9 @@ select {
   text-transform: uppercase;
 }
 .c-section--product .c-sort-bar .c-sort-bar_data-option select {
-  margin-left: 5px;
+  margin-left: 15px;
   padding: 3px 6px;
+  min-width: 200px;
   font-size: 14px;
   border: 1px solid #E2DEDC;
   border-radius: 5px;
@@ -366,6 +373,8 @@ select {
   margin-top: 20px;
 }
 .c-section--product .c-product {
+  position: relative;
+  min-height: 325px;
   cursor: pointer;
 }
 .c-section--product .c-product .c-product__img {
@@ -376,6 +385,9 @@ select {
   max-height: 170px;
 }
 .c-section--product .c-product .c-product__info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   text-transform: uppercase;
 }
@@ -451,7 +463,29 @@ select {
 /*-------------------------------------------------------------------
 Responsive
 -------------------------------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .c-section--product .c-product {
+    min-height: 290px;
+  }
+  .c-section--product .c-product .c-product__img img {
+    max-height: 120px;
+  }
+  .c-section--product .c-product .c-product__info .c-product__price {
+    font-size: 18px;
+  }
+  .c-section--product .c-product .c-product__info .c-product__price .c-product__old-price {
+    margin-right: 6px;
+  }
+}
 @media screen and (max-width: 768px) {
+  .l__col-3 {
+    width: 33.33%;
+  }
+
+  .l__col-9 {
+    width: 66.66%;
+  }
+
   .c-header .c-header__mid .c-header__logo {
     width: 33.33%;
   }
@@ -471,6 +505,16 @@ Responsive
   .c-section main .c-empty-content, .c-section--product main .c-empty-content {
     height: 166px;
   }
+
+  .c-section--product .c-product {
+    min-height: 310px;
+  }
+  .c-section--product .c-product .c-product__price {
+    display: block;
+  }
+  .c-section--product .c-product .c-product__price .c-product__old-price {
+    margin: 0 0 5px;
+  }
 }
 @media screen and (max-width: 600px) {
   .c-header .c-header__bottom li {
@@ -485,14 +529,39 @@ Responsive
   .c-section aside nav ul li:before, .c-section--product aside nav ul li:before {
     content: none;
   }
+
+  .c-section--product .c-sort-bar__display,
+.c-section--product .c-sort-bar_data-option {
+    width: 100%;
+  }
+  .c-section--product .c-sort-bar .c-sort-bar_data-option select {
+    min-width: 185px;
+  }
+  .c-section--product .c-product {
+    min-height: 300px;
+  }
 }
 @media screen and (max-width: 468px) {
   .l__col-2-4, .l__col-3, .l__col-4, .l__col-6, .l__col-8, .l__col-9, .l__col-9-6, .c-header .c-header__mid .c-header__logo, .c-header .c-header__mid .c-search {
     width: 100%;
   }
 
+  .c-header .c-header__top {
+    text-align: center;
+  }
+
   .c-section main .c-empty-content, .c-section--product main .c-empty-content {
     height: 90px;
+  }
+
+  .c-section--product aside nav ul {
+    max-width: 60%;
+  }
+  .c-section--product .c-product-wrapper .l__col-3 {
+    width: 50%;
+  }
+  .c-section--product .c-product-wrapper .c-product {
+    min-height: 290px;
   }
 
   .c__mobile-hide {

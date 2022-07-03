@@ -95,7 +95,7 @@ function renderProductContent(productData, categoryItem) {
     categoryItem.name +
     "</h1>" +
     '<div class="c-sort-bar l-flex l-flex--center l-flex--wrap">' +
-    '<div class="c-sort-bar__display">' +
+    '<div class="c-sort-bar__display c__mobile-hide">' +
     '<div class="c-sort-bar__display-button active" title="Exibição por grade"><i class="fa-solid fa-grip"></i></div>' +
     '<div class="c-sort-bar__display-button"  title="Exibição por lista"><i class="fa-solid fa-list"></i></div></div>' +
     '<div class="c-sort-bar_data-option">Ordernar por' +
