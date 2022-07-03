@@ -191,7 +191,7 @@ function renderFilterContent(productData, categories) {
 
   if (filterParams.includes("color")) {
     content +=
-      "<h3>Cores</h3><ul>" + setColorListElements(productData) + "</ul>";
+      "<h3>Cores</h3>" + setColorListElements(productData);
   }
 
   if (filterParams.includes("gender")) {
@@ -205,7 +205,7 @@ function renderFilterContent(productData, categories) {
 //Return list items with color content for the filter
 function setColorListElements(productData) {
   let productItems = productData.items;
-  let result = "";
+  let content = '<ul class="l-flex l-flex--wrap">';
   let colors = [];
 
   productItems.forEach((productItem) => {
@@ -217,10 +217,12 @@ function setColorListElements(productData) {
   });
 
   colors.forEach((color) => {
-    result += "<li>" + color + "</li>";
+    content += '<li class="l__col-4" color="'+color+'" title="Filtrar por cor '+color+'"></li>';
   });
 
-  return result;
+  content += '</ul>';
+
+  return content;
 }
 
 //Return list items with gender content for the filter

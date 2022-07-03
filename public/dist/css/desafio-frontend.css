@@ -264,14 +264,52 @@ select {
   margin: 10px 0;
   font-weight: 600;
 }
+.c-section--product aside nav ul {
+  max-width: 90%;
+}
 .c-section--product aside nav ul li {
   padding-left: 10px;
   padding-right: 10px;
   color: #626262;
+  cursor: pointer;
 }
 .c-section--product aside nav ul li:before {
   left: 0;
   background: #626262;
+}
+.c-section--product aside nav ul li[color] {
+  display: block;
+  padding: 1px;
+  height: 24px;
+  width: 33.33%;
+}
+.c-section--product aside nav ul li[color]:before {
+  content: "";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.c-section--product aside nav ul li[color][color=preta]:before {
+  background: #000;
+}
+.c-section--product aside nav ul li[color][color=laranja]:before {
+  background: #F26324;
+}
+.c-section--product aside nav ul li[color][color=amarela]:before {
+  background: #e5f100;
+}
+.c-section--product aside nav ul li[color][color=cinza]:before {
+  background: #818286;
+}
+.c-section--product aside nav ul li[color][color=azul]:before {
+  background: #1E2B50;
+}
+.c-section--product aside nav ul li[color][color=rosa]:before {
+  background: #f209a0;
+}
+.c-section--product aside nav ul li[color][color=bege]:before {
+  background: #dfd48d;
 }
 .c-section--product h1 {
   margin-top: 5px;

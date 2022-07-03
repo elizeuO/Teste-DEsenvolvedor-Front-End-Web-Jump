@@ -40,11 +40,15 @@ Colors
 $colorBlack: #000;
 $colorMatteBlack:#231F20;
 $colorWhite: #fff;
+$colorGray: #818286;
 $colorDarkRed: #CB0D1F;
 $colorLightRed: #ED1A39;
 $colorSeaGreen: #80bdb8;
 $colorBlue: #1E2B50;
 $colorOrange: #F26324;
+$colorYellow: #e5f100;
+$colorPink: #f209a0;
+$colorBeige: #dfd48d;
 
 /*-------------------------------------------------------------------
 Transition
@@ -331,18 +335,65 @@ select {
         }
 
         ul {
+            max-width: 90%;
             li {
                 padding-left: 10px;
                 padding-right: 10px;
                 color: #626262;
+                cursor: pointer;
 
                 &:before {
                     left: 0;
                     background: #626262;
                 }
+
+                &[color]{
+                    display: block;
+                    padding: 1px;
+                    height: 24px;
+                    width: 33.33%;
+
+                    &:before{
+                        content: '';
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+                    }
+
+
+                &[color="preta"]:before{
+                    background: $colorBlack;
+                }
+
+                &[color="laranja"]:before{
+                    background: $colorOrange;
+                }
+
+                &[color="amarela"]:before{
+                    background: $colorYellow;
+                }
+
+                &[color="cinza"]:before{
+                    background: $colorGray;
+                }
+
+                &[color="azul"]:before{
+                    background: $colorBlue;
+                }
+
+                &[color="rosa"]:before{
+                    background: $colorPink;
+                }
+
+                &[color="bege"]:before{
+                    background: $colorBeige;
+                }
+
+                   
+                }
             }
         }
-
     }
 
     h1 {
@@ -360,7 +411,7 @@ select {
         @extend %transition;
         display: inline-block;
         margin-right: 10px;
-        color: #818286;
+        color: $colorGray;
         font-size: 20px;
         cursor: pointer;
 
