@@ -48,22 +48,30 @@
 
         <div class="l-flex l-flex--center l-flex--negative">
 
+          <button class="c__mobile-only js-toggle-main-nav">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
             <div class="c-header__logo">
               <a href="/">
                 <img src="assets/img/logo.jpg" alt="Desafio Frontend Webjump">
               </a>
             </div>
 
-            <form class="c-search l-flex">
+            <button class="c__mobile-only js-toggle-header-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <form class="c-search l-flex js-header-search">
               <input type="text" class="c-search__input" aria-label="Informe sua busca">
-              <input type="submit" class="c-search__submit" value="Buscar">
+              <input type="submit" class="c-search__submit" disabled value="Buscar">
             </form>
         </div>
 
       </div>
     </div>
 
-    <div class="c-header__bottom">
+    <div class="c-header__bottom js-main-nav">
       <div class="c-container">
 
         <nav>
