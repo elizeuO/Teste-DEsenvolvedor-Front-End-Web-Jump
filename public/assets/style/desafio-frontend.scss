@@ -103,6 +103,11 @@ Flex
     width: 33.33%;
 }
 
+.l__col-6 {
+    @extend %flexColPatterns;
+    width: 50%;
+}
+
 .l__col-8 {
     @extend %flexColPatterns;
     width: 66.66%;
@@ -171,7 +176,7 @@ select {
 
 .c-container {
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 12px;
     max-width: 1100px;
 }
 
@@ -191,11 +196,13 @@ select {
     }
 
     .c-header__mid {
-        padding: 30px 0;
+        padding: 10px 0;
         background: $colorWhite;
 
         .c-header__logo {
+            @extend %flexColPatterns;
             margin-right: auto;
+            width: 50%;
 
             img {
                 max-height: 53px;
@@ -203,7 +210,9 @@ select {
         }
 
         .c-search {
+            @extend %flexColPatterns;
             margin-left: auto;
+            width: 50%;
 
             .c-search__input {
                 padding: 0 12px;
@@ -217,6 +226,7 @@ select {
                 background: $colorDarkRed;
                 color: $colorWhite;
                 font-weight: 600;
+                text-transform: uppercase;
                 border: none;
                 cursor: pointer;
 
@@ -230,13 +240,13 @@ select {
     }
 
     .c-header__bottom {
-        padding: 16px 0;
+        padding: 18px 0;
         background: $colorDarkRed;
 
         li {
             display: inline-block;
 
-            padding: 0 30px;
+            padding: 0 40px;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -253,37 +263,44 @@ select {
 }
 
 .c-section {
-    padding: 15px 0 27px;
+    padding: 10px 0 20px;
 
-    aside nav {
-        padding: 12px 6px;
-        height: 100%;
-        background: #E2DEDC;
+    aside {
+        padding-right: 6px;
+        padding-bottom: 0;
 
-        ul {
+        nav {
+            padding: 18px 6px;
+            height: 100%;
+            background: #E2DEDC;
 
-            li {
-                position: relative;
-                padding: 3px 18px;
-                font-size: 18px;
+            ul {
 
-                &:before {
-                    content: '';
-                    display: inline-block;
-                    position: absolute;
-                    top: 50%;
-                    left: 8px;
-                    height: 4px;
-                    width: 4px;
-                    background: $colorBlack;
-                    border-radius: 50%;
-                    transform: translateY(-50%);
+                li {
+                    position: relative;
+                    padding: 5px 18px;
+                    font-size: 18px;
+
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        left: 8px;
+                        height: 4px;
+                        width: 4px;
+                        background: $colorBlack;
+                        border-radius: 50%;
+                        transform: translateY(-50%);
+                    }
+
                 }
 
             }
-
         }
     }
+
+
 
     nav,
     main {
@@ -295,6 +312,10 @@ select {
             background: #ACACAC;
             height: 281px;
             ;
+        }
+
+        h2 {
+            margin: 12px 0;
         }
     }
 }
@@ -336,6 +357,7 @@ select {
 
         ul {
             max-width: 90%;
+
             li {
                 padding-left: 10px;
                 padding-right: 10px;
@@ -347,13 +369,13 @@ select {
                     background: #626262;
                 }
 
-                &[color]{
+                &[color] {
                     display: block;
                     padding: 1px;
                     height: 24px;
                     width: 33.33%;
 
-                    &:before{
+                    &:before {
                         content: '';
                         position: relative;
                         width: 100%;
@@ -362,35 +384,35 @@ select {
                     }
 
 
-                &[color="preta"]:before{
-                    background: $colorBlack;
-                }
+                    &[color="preta"]:before {
+                        background: $colorBlack;
+                    }
 
-                &[color="laranja"]:before{
-                    background: $colorOrange;
-                }
+                    &[color="laranja"]:before {
+                        background: $colorOrange;
+                    }
 
-                &[color="amarela"]:before{
-                    background: $colorYellow;
-                }
+                    &[color="amarela"]:before {
+                        background: $colorYellow;
+                    }
 
-                &[color="cinza"]:before{
-                    background: $colorGray;
-                }
+                    &[color="cinza"]:before {
+                        background: $colorGray;
+                    }
 
-                &[color="azul"]:before{
-                    background: $colorBlue;
-                }
+                    &[color="azul"]:before {
+                        background: $colorBlue;
+                    }
 
-                &[color="rosa"]:before{
-                    background: $colorPink;
-                }
+                    &[color="rosa"]:before {
+                        background: $colorPink;
+                    }
 
-                &[color="bege"]:before{
-                    background: $colorBeige;
-                }
+                    &[color="bege"]:before {
+                        background: $colorBeige;
+                    }
 
-                   
+
                 }
             }
         }
@@ -445,7 +467,7 @@ select {
 
     }
 
-    .c-product-wrapper{
+    .c-product-wrapper {
         margin-top: 20px;
     }
 
@@ -475,9 +497,9 @@ select {
                 margin-bottom: 10px;
                 color: $colorDarkRed;
                 font-weight: 700;
-                    font-size: 21px;
+                font-size: 21px;
 
-                .c-product__old-price{
+                .c-product__old-price {
                     margin-right: 10px;
                     color: #808185;
                     font-size: 15px;
@@ -496,10 +518,11 @@ select {
                 border-radius: 5px;
             }
 
-            
+
         }
 
-        &:hover .c-product__button, &:focus .c-product__button{
+        &:hover .c-product__button,
+        &:focus .c-product__button {
             background: $colorDarkRed;
 
         }
@@ -527,19 +550,21 @@ select {
     }
 }
 
-.c-pagination{
+.c-pagination {
     padding: 10px 20px;
 
-    .c-pagination__prev-next{
+    .c-pagination__prev-next {
         color: $colorSeaGreen;
     }
 
-    .c-pagination__prev-next, .c-pagination__page{
+    .c-pagination__prev-next,
+    .c-pagination__page {
         @extend %transition;
         padding: 10px;
         cursor: pointer;
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             color: $colorLightRed;
         }
     }
@@ -553,3 +578,99 @@ select {
         background: $colorDarkRed;
     }
 }
+
+/*-------------------------------------------------------------------
+Responsive
+-------------------------------------------------------------------*/
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 768px) {
+    .c-header {
+
+        .c-header__mid {
+            .c-header__logo {
+                width: 33.33%;
+            }
+
+            .c-search {
+                width: 66.66%;
+            }
+        }
+
+        .c-header__bottom {
+            li {
+                padding-left: 0;
+                padding-right: 50px;
+                line-height: 20px;
+            }
+        }
+
+    }
+
+    .c-section {
+        aside {
+            nav {
+                height: auto;
+                min-height: 350px;
+            }
+        }
+
+        main{
+            .c-empty-content{
+                height: 166px;
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 600px){
+
+    .c-header{
+        .c-header__bottom{
+                li{
+                    padding-right: 20px;
+                    line-height: 25px;
+                }
+        }
+    }
+
+    .c-section{
+        aside{
+            nav{
+                ul{
+                    li{
+                        padding-left: 0;
+                        padding-right: 0;
+    
+                        &:before{
+                            content: none;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 468px){
+    %flexColPatterns {
+        width: 100%;
+    }
+
+    .c-section{
+        main{
+            .c-empty-content{
+                height: 90px;
+            }
+        }
+    }
+
+    .c__mobile-hide{
+        display: none;
+    }
+}
+
