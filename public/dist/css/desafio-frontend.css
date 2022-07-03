@@ -31,7 +31,7 @@ Colors
 /*-------------------------------------------------------------------
 Transition
 -------------------------------------------------------------------*/
-.c-section--product .c-product .c-product__info .c-product__button, .c-section--product .c-sort-bar__display-button, .c-header .c-header__mid .c-search .c-search__submit, a {
+.c-pagination .c-pagination__prev-next, .c-pagination .c-pagination__page, .c-section--product .c-product .c-product__info .c-product__button, .c-section--product .c-sort-bar__display-button, .c-header .c-header__mid .c-search .c-search__submit, a {
   transition: all 300ms;
 }
 
@@ -181,7 +181,7 @@ select {
   cursor: pointer;
 }
 .c-header .c-header__mid .c-search .c-search__submit:hover, .c-header .c-header__mid .c-search .c-search__submit:focus {
-  background: #00A8A9;
+  background: #80bdb8;
 }
 .c-header .c-header__bottom {
   padding: 16px 0;
@@ -235,6 +235,9 @@ select {
   height: 281px;
 }
 
+.c-section--product {
+  padding-bottom: 0;
+}
 .c-section--product h1,
 .c-section--product h2 {
   color: #ED1A39;
@@ -257,7 +260,7 @@ select {
   text-transform: uppercase;
 }
 .c-section--product aside nav h3 {
-  color: #00A8A9;
+  color: #80bdb8;
   margin: 10px 0;
   font-weight: 600;
 }
@@ -287,7 +290,7 @@ select {
   cursor: pointer;
 }
 .c-section--product .c-sort-bar__display-button:hover, .c-section--product .c-sort-bar__display-button:focus, .c-section--product .c-sort-bar__display-button.active {
-  color: #00A8A9;
+  color: #80bdb8;
 }
 .c-section--product .c-sort-bar .c-sort-bar__display {
   margin-right: auto;
@@ -343,7 +346,7 @@ select {
 }
 .c-section--product .c-product .c-product__info .c-product__button {
   padding: 10px 0;
-  background: #00A8A9;
+  background: #80bdb8;
   color: #fff;
   font-weight: 600;
   border-radius: 5px;
@@ -361,10 +364,24 @@ select {
   color: #000;
 }
 .c-breadcrumb a:hover, .c-breadcrumb a:focus {
-  color: #00A8A9;
+  color: #80bdb8;
 }
 .c-breadcrumb .c-breadcrumb__current {
   color: #CB0D1F;
+}
+
+.c-pagination {
+  padding: 10px 20px;
+}
+.c-pagination .c-pagination__prev-next {
+  color: #80bdb8;
+}
+.c-pagination .c-pagination__prev-next, .c-pagination .c-pagination__page {
+  padding: 10px;
+  cursor: pointer;
+}
+.c-pagination .c-pagination__prev-next:hover, .c-pagination .c-pagination__prev-next:focus, .c-pagination .c-pagination__page:hover, .c-pagination .c-pagination__page:focus {
+  color: #ED1A39;
 }
 
 .c-footer {

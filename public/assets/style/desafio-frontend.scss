@@ -42,7 +42,7 @@ $colorMatteBlack:#231F20;
 $colorWhite: #fff;
 $colorDarkRed: #CB0D1F;
 $colorLightRed: #ED1A39;
-$colorSeaGreen: #00A8A9;
+$colorSeaGreen: #80bdb8;
 $colorBlue: #1E2B50;
 $colorOrange: #F26324;
 
@@ -298,6 +298,8 @@ select {
 .c-section--product {
     @extend .c-section;
 
+    padding-bottom: 0;
+
     h1,
     h2 {
         color: $colorLightRed;
@@ -471,6 +473,24 @@ select {
 
     .c-breadcrumb__current {
         color: $colorDarkRed;
+    }
+}
+
+.c-pagination{
+    padding: 10px 20px;
+
+    .c-pagination__prev-next{
+        color: $colorSeaGreen;
+    }
+
+    .c-pagination__prev-next, .c-pagination__page{
+        @extend %transition;
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover, &:focus{
+            color: $colorLightRed;
+        }
     }
 }
 

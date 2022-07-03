@@ -96,8 +96,8 @@ function renderProductContent(productData, categoryItem) {
     "</h1>" +
     '<div class="c-sort-bar l-flex l-flex--center l-flex--wrap">' +
     '<div class="c-sort-bar__display">' +
-    '<div class="c-sort-bar__display-button active"><i class="fa-solid fa-grip"></i></div>' +
-    '<div class="c-sort-bar__display-button"><i class="fa-solid fa-list"></i></div></div>' +
+    '<div class="c-sort-bar__display-button active" title="Exibição por grade"><i class="fa-solid fa-grip"></i></div>' +
+    '<div class="c-sort-bar__display-button"  title="Exibição por lista"><i class="fa-solid fa-list"></i></div></div>' +
     '<div class="c-sort-bar_data-option">Ordernar por' +
     '<select><option value="Preço">Preço</option></select>' +
     "</div></div>";
@@ -108,9 +108,22 @@ function renderProductContent(productData, categoryItem) {
 
   productListWrapper += renderProducts(productData) + "</div>";
 
-  content += productListWrapper;
+  content += productListWrapper + renderPagination();
 
   element.innerHTML = content;
+}
+
+//Render static pagination
+function renderPagination(){
+  let pagination = '<div class="c-pagination l-flex l-flex--center"><div class="c-pagination__prev-next" title="Ir para página anterior" role="button"><i class="fa-solid fa-chevron-left"></i></div>';
+
+  for(let i = 1; i<=5; i++){
+    pagination += '<div class="c-pagination__page">'+i+'</div>';
+  }
+
+  pagination += '<div class="c-pagination__prev-next"><i class="fa-solid fa-chevron-right" title="Ir para página posterior" role="button"></i></div></div>'
+
+  return pagination;
 }
 
 //Render product items
