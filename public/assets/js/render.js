@@ -82,6 +82,7 @@ function renderBreadcrumb(categoryName) {
     "</span>";
 }
 
+//Render product related content
 function renderProductContent(productData, categoryItem) {
   let element = document.querySelector(".js-render-product-content");
 
@@ -101,33 +102,60 @@ function renderProductContent(productData, categoryItem) {
     '<select><option value="Preço">Preço</option></select>' +
     "</div></div>";
 
-  let productListWrapper =  '<div class="js-product-wrapper">' 
-    +'<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative">';
+  let productListWrapper =
+    '<div class="c-product-wrapper js-product-wrapper">' +
+    '<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative">';
 
-
-  productListWrapper += renderProducts(productData) + '</div>';
+  productListWrapper += renderProducts(productData) + "</div>";
 
   content += productListWrapper;
 
   element.innerHTML = content;
 }
 
+//Render product items
 function renderProducts(productData) {
   let products = productData.items;
-  let content = '';
-
-  console.log(products)
+  let content = "";
 
   products.forEach((product) => {
-    content +='<article class="l__col-3">'+
-    '<div class= "c-product js-product">'+
-    '<div class= "c-product__img l-flex l-flex--center"><img src="/assets/img/'+
-    product.image + '"></div>'+
-    '<div class="c-product__info"><h2>'+product.name+'</h2>'+
-    '<div class="c-product__price">R$ '+product.price+'</div>'+
-    '<div class="c-product__button">Comprar</div>'+
-    '</div></div></article>';
+    content +=
+      '<article class="l__col-3">' +
+      '<div class= "c-product js-product">' +
+      '<div class= "c-product__img l-flex l-flex--center"><img src="/assets/img/' +
+      product.image +
+      '"></div>' +
+      '<div class="c-product__info"><h2>' +
+      product.name +
+      "</h2>" +
+      handleProductPrices(product) +
+      '<div class="c-product__button">Comprar</div>' +
+      "</div></div></article>";
   });
+
+  return content;
+}
+
+function handleProductPrices(product) {
+  let content = '<div class="c-product__price l-flex l-flex--center">';
+
+  let specialPrice = product.specialPrice;
+  let price = product.price;
+
+  if (null === price) {
+    return;
+  }
+
+  price = price.toFixed(2).replace(".", ",");
+
+  if (undefined !== specialPrice) {
+    specialPrice = specialPrice.toFixed(2).replace(".", ",");
+    content += '<div class="c-product__old-price">R$' +price+ '</div>'+
+    '<div class="c-product__current-price">R$' +specialPrice+ '</div>'
+  }else{
+    content += '<div class="c-product__current-price">R$' +price+ '</div>'
+  }
+  content += "</div>";
 
   return content;
 }

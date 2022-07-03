@@ -242,6 +242,7 @@ select {
 .c-section--product aside nav {
   padding-left: 20px;
   padding-right: 20px;
+  height: auto;
   background: none;
   border: 1px solid #E2DEDC;
 }
@@ -305,6 +306,9 @@ select {
   border: 1px solid #E2DEDC;
   border-radius: 5px;
 }
+.c-section--product .c-product-wrapper {
+  margin-top: 20px;
+}
 .c-section--product .c-product {
   cursor: pointer;
 }
@@ -328,6 +332,14 @@ select {
   margin-bottom: 10px;
   color: #CB0D1F;
   font-weight: 700;
+  font-size: 21px;
+}
+.c-section--product .c-product .c-product__info .c-product__price .c-product__old-price {
+  margin-right: 10px;
+  color: #808185;
+  font-size: 15px;
+  text-decoration: line-through;
+  font-weight: 400;
 }
 .c-section--product .c-product .c-product__info .c-product__button {
   padding: 10px 0;
