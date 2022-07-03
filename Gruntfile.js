@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
         },
         build: {
-          src: 'public/assets/js/desafio-frontend.js',
+          src: 'public/assets/js/*.js',
           dest: 'public/dist/main.js'
         }
       },
