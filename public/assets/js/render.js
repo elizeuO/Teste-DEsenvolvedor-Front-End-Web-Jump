@@ -11,8 +11,7 @@ function renderNavigationWithCategories() {
   elements.forEach((element) => {
     let result = '<li><a href="/">Página inicial</a> </li>';
 
-    result +=
-      setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
+    result += setCategoryListElements(categories) + '<li><a">Contato</a></li>';
     element.innerHTML = result;
   });
 }
@@ -96,14 +95,14 @@ function renderProductContent(productData, categoryItem) {
     "</h1>" +
     '<div class="c-sort-bar l-flex l-flex--center l-flex--wrap">' +
     '<div class="c-sort-bar__display c__mobile-hide">' +
-    '<div class="c-sort-bar__display-button active" title="Exibição por grade"><i class="fa-solid fa-grip"></i></div>' +
-    '<div class="c-sort-bar__display-button"  title="Exibição por lista"><i class="fa-solid fa-list"></i></div></div>' +
+    '<button class="c-sort-bar__display-button active js-show-by-layout" layout="grid" title="Exibição por grade"><i class="fa-solid fa-grip"></i></button>' +
+    '<button class="c-sort-bar__display-button js-show-by-layout" layout="list" title="Exibição por lista"><i class="fa-solid fa-list"></i></button></div>' +
     '<div class="c-sort-bar_data-option">Ordernar por' +
     '<select><option value="Preço">Preço</option></select>' +
     "</div></div>";
 
   let productListWrapper =
-    '<div class="c-product-wrapper js-product-wrapper">' +
+    '<div class="c-product-wrapper js-product-wrapper" layout="grid">' +
     '<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative">';
 
   productListWrapper += renderProducts(productData) + "</div>";
@@ -111,19 +110,6 @@ function renderProductContent(productData, categoryItem) {
   content += productListWrapper + renderPagination();
 
   element.innerHTML = content;
-}
-
-//Render static pagination
-function renderPagination(){
-  let pagination = '<div class="c-pagination l-flex l-flex--center"><div class="c-pagination__prev-next" title="Ir para página anterior" role="button"><i class="fa-solid fa-chevron-left"></i></div>';
-
-  for(let i = 1; i<=5; i++){
-    pagination += '<div class="c-pagination__page">'+i+'</div>';
-  }
-
-  pagination += '<div class="c-pagination__prev-next"><i class="fa-solid fa-chevron-right" title="Ir para página posterior" role="button"></i></div></div>'
-
-  return pagination;
 }
 
 //Render product items
@@ -137,7 +123,7 @@ function renderProducts(productData) {
       '<div class= "c-product js-product">' +
       '<div class= "c-product__img l-flex l-flex--center"><img src="/assets/img/' +
       product.image +
-      '"></div>' +
+      '" al="'+product.name+'"></div>' +
       '<div class="c-product__info"><h2>' +
       product.name +
       "</h2>" +
@@ -149,6 +135,22 @@ function renderProducts(productData) {
   return content;
 }
 
+//Render static pagination
+function renderPagination() {
+  let pagination =
+    '<div class="c-pagination l-flex l-flex--center"><div class="c-pagination__prev-next" title="Ir para página anterior" role="button"><i class="fa-solid fa-chevron-left"></i></div>';
+
+  for (let i = 1; i <= 5; i++) {
+    pagination += '<div class="c-pagination__page">' + i + "</div>";
+  }
+
+  pagination +=
+    '<div class="c-pagination__prev-next"><i class="fa-solid fa-chevron-right" title="Ir para página posterior" role="button"></i></div></div>';
+
+  return pagination;
+}
+
+//Return formatted product prices
 function handleProductPrices(product) {
   let content = '<div class="c-product__price l-flex l-flex--center">';
 
@@ -163,10 +165,15 @@ function handleProductPrices(product) {
 
   if (undefined !== specialPrice) {
     specialPrice = specialPrice.toFixed(2).replace(".", ",");
-    content += '<div class="c-product__old-price">R$' +price+ '</div>'+
-    '<div class="c-product__current-price">R$' +specialPrice+ '</div>'
-  }else{
-    content += '<div class="c-product__current-price">R$' +price+ '</div>'
+    content +=
+      '<div class="c-product__old-price">R$' +
+      price +
+      "</div>" +
+      '<div class="c-product__current-price">R$' +
+      specialPrice +
+      "</div>";
+  } else {
+    content += '<div class="c-product__current-price">R$' + price + "</div>";
   }
   content += "</div>";
 
@@ -190,8 +197,7 @@ function renderFilterContent(productData, categories) {
   content += setCategoryListElements(categories) + "</ul>";
 
   if (filterParams.includes("color")) {
-    content +=
-      "<h3>Cores</h3>" + setColorListElements(productData);
+    content += "<h3>Cores</h3>" + setColorListElements(productData);
   }
 
   if (filterParams.includes("gender")) {
@@ -217,10 +223,15 @@ function setColorListElements(productData) {
   });
 
   colors.forEach((color) => {
-    content += '<li class="l__col-4" color="'+color+'" title="Filtrar por cor '+color+'"></li>';
+    content +=
+      '<li class="l__col-4" color="' +
+      color +
+      '" title="Filtrar por cor ' +
+      color +
+      '"></li>';
   });
 
-  content += '</ul>';
+  content += "</ul>";
 
   return content;
 }

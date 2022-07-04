@@ -440,9 +440,10 @@ select {
     .c-sort-bar__display-button {
         @extend %transition;
         display: inline-block;
-        margin-right: 10px;
+        margin-right: 5px;
         color: $colorGray;
         font-size: 20px;
+        border: none;
         cursor: pointer;
 
         &:hover,
@@ -478,6 +479,19 @@ select {
 
     .c-product-wrapper {
         margin-top: 20px;
+
+        &[layout="list"]{
+            article{
+                width: 80%;
+
+                .c-product__button{
+                    display: inline-block;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    width: auto;
+                }
+            }
+        }
     }
 
     .c-product {

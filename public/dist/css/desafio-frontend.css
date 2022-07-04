@@ -344,9 +344,10 @@ select {
 }
 .c-section--product .c-sort-bar__display-button {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
   color: #818286;
   font-size: 20px;
+  border: none;
   cursor: pointer;
 }
 .c-section--product .c-sort-bar__display-button:hover, .c-section--product .c-sort-bar__display-button:focus, .c-section--product .c-sort-bar__display-button.active {
@@ -372,6 +373,15 @@ select {
 }
 .c-section--product .c-product-wrapper {
   margin-top: 20px;
+}
+.c-section--product .c-product-wrapper[layout=list] article {
+  width: 80%;
+}
+.c-section--product .c-product-wrapper[layout=list] article .c-product__button {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
 }
 .c-section--product .c-product {
   position: relative;
