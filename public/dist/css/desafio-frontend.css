@@ -252,7 +252,8 @@ select {
   background: #ACACAC;
   height: 281px;
 }
-.c-section main h2, .c-section--product main h2 {
+.c-section main h1, .c-section--product main h1, .c-section main h2, .c-section--product main h2 {
+  font-size: 26px;
   margin: 12px 0;
 }
 
@@ -333,7 +334,7 @@ select {
 .c-section--product aside nav ul li[color][color=bege]:before {
   background: #dfd48d;
 }
-.c-section--product h1 {
+.c-section--product main h1 {
   margin-top: 0;
   font-size: 32px;
 }
