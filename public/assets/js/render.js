@@ -11,7 +11,7 @@ function renderNavigationWithCategories() {
   elements.forEach((element) => {
     let result = '<li><a href="/">Página inicial</a> </li>';
 
-    result += setCategoryListElements(categories) + '<li><a">Contato</a></li>';
+    result += setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
     element.innerHTML = result;
   });
 }
@@ -120,10 +120,10 @@ function renderProducts(productData) {
   products.forEach((product) => {
     content +=
       '<article class="l__col-3">' +
-      '<div class= "c-product js-product">' +
+      '<div class= "c-product js-product" tabindex="0">' +
       '<div class= "c-product__img l-flex l-flex--center"><img src="/assets/img/' +
       product.image +
-      '" al="'+product.name+'"></div>' +
+      '" aria-hidden="true"></div>' +
       '<div class="c-product__info"><h2>' +
       product.name +
       "</h2>" +
@@ -224,7 +224,7 @@ function setColorListElements(productData) {
 
   colors.forEach((color) => {
     content +=
-      '<li class="l__col-4" color="' +
+      '<li role="button" class="l__col-4" color="' +
       color +
       '" title="Filtrar por cor ' +
       color +

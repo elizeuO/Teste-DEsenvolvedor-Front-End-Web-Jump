@@ -33,6 +33,10 @@ function removeActiveStateFromMobileElements() {
     let queryItem = document.querySelector(element + ".active");
     if (null !== queryItem) {
       queryItem.classList.remove("active");
+
+      if(queryItem.hasAttribute('aria-pressed')){
+        queryItem.setAttribute('aria-pressed', 'false')
+      }
     }
   });
 }
@@ -59,6 +63,7 @@ document.addEventListener("click", (ev) => {
   }
 
   removeActiveStateFromMobileElements();
+  button.setAttribute('aria-pressed', 'true');
   button.classList.toggle("active");
   toggleHeaderSearchbar();
 });
@@ -71,6 +76,7 @@ document.addEventListener("click", (ev) => {
   }
 
   removeActiveStateFromMobileElements();
+  button.setAttribute('aria-pressed', 'true');
   button.classList.toggle("active");
   toggleNavbar();
 });

@@ -1,3 +1,4 @@
+//Change product list layout type
 function toogleProductLayoutType(layoutType) {
   let productWrapper = document.querySelector(".js-product-wrapper[layout]");
 
@@ -8,6 +9,7 @@ function toogleProductLayoutType(layoutType) {
   productWrapper.setAttribute("layout", layoutType);
 }
 
+//Handle with layout buttons click
 document.addEventListener("click", (ev) => {
   let button = ev.target.closest(".js-show-by-layout[layout]");
 
@@ -32,6 +34,7 @@ document.addEventListener("click", (ev) => {
   button.classList.add("active");
 });
 
+//Remove active state from layout buttons
 function removeActiveStateLayoutButton() {
   let layoutButtons = document.querySelectorAll(
     ".js-show-by-layout.active[layout]"
