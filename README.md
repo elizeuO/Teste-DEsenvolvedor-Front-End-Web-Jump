@@ -63,10 +63,8 @@ Tive que deixar o header e o footer estáticos, repetindo nas duas páginas, por
 
 Outro problema que enfrentei, foi a divergência de cores que encontrei nos modelos do repositório com o arquivo do Adobe XD. Para manter consistência eu decidi escolher o modelo de cores das imagens do repositório e o usar o XD como referência para tamanho de elementos e fontes.
 
-Nos produtos, inicialmente para resolver o problema da quebra de alinhamento por conta do diferente número de palavras de produto pra produto eu havia feito um estilo para que os botões ficassem alinhados, porém estava ficando um espaço vazio entre a imagem e o título. Isso estava me incomodando porque se o título fosse curto ele ficava maior, por isso optei por cancelar essa solução.
-
 O site não foi testado no navegador Safari porque o mesmo estava apresentando problemas de carregamento de estilo e mau comportamento no meu computador (os demais navegadores citados no desafio foram testados).
 
 ### Melhorias futuras
 - Desenvolver paginação
-- Desenvolver solução para lidar com os tamanhos de títulos diferentes
+- Desenvolver solução para lidar com os tamanhos de títulos diferentes e modificar a altura do produto de acordo com a necessidade
