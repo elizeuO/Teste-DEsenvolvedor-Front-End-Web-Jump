@@ -23,9 +23,13 @@ Criamos este teste para avaliar seus conhecimentos e habilidades frontend (HTML,
 - Estratégias
 
 Uma pasta chamada “dist” foi criada na “public” para conter o arquivo “main.js”, que é um compilado minificado pelo Grunt dos arquivos JS criados na pasta “assets” . O CSS modificado pelo SASS também foi destinado a esta pasta. Isso foi feito  para garantir a otimização no carregamento das páginas. 
+
 Foi utilizada a metodologia BEM para organização da nomenclatura das classes de CSS.
+
 Criei uma página chamada categoria, cujo conteúdo, exceto o header e o footer, é renderizado através de javascript pelo consumo da API disponibilizada. A categoria da página é determinada pelo valor do parâmetro ID contido na URL.
+
 O wrapper do item de produto foi deixado como div porque não foi passado o comportamento de ecommerce: em alguns casos o elemento inteiro é um link que leva a página do produto, em outros o botão comprar adiciona direto no carrinho, por isso deixei sem link.
+
 No responsivo, foram adicionados outros breakpoints para manter a consistência do layout. Também foram usados elementos que só aparecem no breakpoint 468px para exibir a barra de pesquisa e navegação do header. Esses elementos fecham ao pressionar Esc ou clicar fora do header e também quando outro elemento deste tipo é clicado.
 
 - Modificações
@@ -35,5 +39,6 @@ Foi necessária a modificação de um parâmetro do arquivo “app.js” que est
 - Impasses
 
 Tive que deixar o header e o footer estáticos, repetindo nas duas páginas, porque a forma como estou habituado a fazer é através do uso do include do PHP e eu não queria fazer o uso desta linguagem, pois foi pedido o foco no emprego do javascript, HTML e CSS. Eu poderia ter feito uma injeção do conteúdo do header e footer com um script js, mas o conteúdo da tag head iria ter que se repetir para poder fazer a chamada do script para a realização de tal operação.
+
 	Outro problema que enfrentei, foi a divergência de cores que encontrei nos modelos do repositório com o arquivo do Adobe XD. Para manter consistência eu decidi escolher o modelo de cores das imagens do repositório e o usar o XD como referência para tamanho de elementos e fontes.
 
