@@ -110,6 +110,11 @@ body {
   font-family: openSans;
 }
 
+.c__acessibility-text {
+  font-size: 0;
+  line-height: 0;
+}
+
 img {
   max-width: 100%;
 }

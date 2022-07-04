@@ -11,7 +11,8 @@ function renderNavigationWithCategories() {
   elements.forEach((element) => {
     let result = '<li><a href="/">Página inicial</a> </li>';
 
-    result += setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
+    result +=
+      setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
     element.innerHTML = result;
   });
 }
@@ -166,14 +167,17 @@ function handleProductPrices(product) {
   if (undefined !== specialPrice) {
     specialPrice = specialPrice.toFixed(2).replace(".", ",");
     content +=
-      '<div class="c-product__old-price">R$' +
+      '<div class="c-product__old-price"><span aria-hidden="true">R$</span><span class="c__acessibility-text">Preço antigo</span>' +
       price +
-      "</div>" +
-      '<div class="c-product__current-price">R$' +
+      '<span class="c__acessibility-text">reais</span></div>' +
+      '<div class="c-product__current-price"><span aria-hidden="true">R$</span><span class="c__acessibility-text">Preço promocional:</span>' +
       specialPrice +
-      "</div>";
+      '<span class="c__acessibility-text">reais</span></div>';
   } else {
-    content += '<div class="c-product__current-price">R$' + price + "</div>";
+    content +=
+      '<div class="c-product__current-price"><span aria-hidden="true">R$</span>' +
+      price +
+      '<span class="c__acessibility-text">reais</span></div>';
   }
   content += "</div>";
 
@@ -231,7 +235,7 @@ function setColorListElements(productData) {
       ' " aria-pressed="false" tabindex="0"></li>';
   });
 
-  content += '</ul>';
+  content += "</ul>";
 
   return content;
 }
@@ -251,7 +255,12 @@ function setGenderListElements(productData) {
   });
 
   genders.forEach((gender) => {
-    result += '<li role="button" class="js-filter-button" type="gender" gender="'+gender+'" aria-pressed="false" tabindex="0">' + gender + '</li>';
+    result +=
+      '<li role="button" class="js-filter-button" type="gender" gender="' +
+      gender +
+      '" aria-pressed="false" tabindex="0"><span class="c__acessibility-text">Filtrar por</span>' +
+      gender +
+      "</li>";
   });
 
   return result;
