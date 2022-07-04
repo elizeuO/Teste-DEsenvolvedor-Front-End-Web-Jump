@@ -1,114 +1,39 @@
-# Quer ser desenvolvedor frontend na Webjump?
+# Desafio Frontend Web Jump
 Criamos este teste para avaliar seus conhecimentos e habilidades frontend (HTML, CSS e JavaScript).
 
-## O teste
-O desafio é tornar o layout abaixo em uma página funcional.  
-Não existe certo ou errado, queremos ver como você se sai em situações reais, como este desafio.   
-O tempo necessário para completar o desafio dependerá da sua experiência e ferramentas escolhidas.
+## Tecnologias Adotadas
+- Photoshop - Utilizado para remover os espaços vazios da imagem do favicon.
 
-Portanto, dê o seu melhor!
+-	Visual Studio Code - IDE utilizada para o desenvolvimento do projeto.
 
-:warning: **OBS:** Os layouts podem ser encontrados na pasta **layout** ou através do link: https://xd.adobe.com/view/bcf73053-f8e6-431c-9eb0-bf24304f6fff-e9a4/specs/
+-	WAI-ARIA - Complemento semântico das tags HTML para melhoria da acessibilidade voltada ao uso de leitores de tela. Tive contato com essa tecnologia no meu TCC da graduação, que foi voltado ao desenvolvimento de um site com acessibilidade para deficientes visuais.
 
-![Layout](assets/preview.jpg)
+-	Chrome VOX - Extensão do Google Chrome que atua como um leitor de tela. Serviu como métrica para a verificação de acessibilidade, especialmente na validação da efetividade das tags do WAI-ARIA.
 
-## Instruções
-- Os arquivos do layout estão no diretório assets deste repositório
-- O conteúdo não é estático. Você deve criar um JavaScript para consultar a lista de categorias a serem exibidas no menu e também para exibir os produtos das categorias.  
-Os dados serão fornecidos por uma API. As instruções estão mais abaixo.
-- Fonte padrão: "Open Sans"
-- Fonte do menu e botão de busca: "Open Sans - Extrabold"
-- As imagens dos produtos estão no diretório public/media
-- Você pode utilizar as tecnologias e bibliotecas que achar melhor (frameworks ou bibliotecas JS / CSS)
-- Crie uma documentação simples comentando sobre as tecnologias e soluções adotadas
-- Se necessário explique também como rodar o seu projeto
+-	GIT Kraken - Ferramenta de controle de versionamento para o GIT.
 
-## Requisitos
-- Design responsivo nos breakpoints 320px, 768px, 1024px e 1440px
-- Suporte para IE, Chrome, Safari, Firefox
-- Semântica
+-	Grunt - Foi usada a task “Uglify” para minificação do código dos arquivos JS e a task  “Watch” para aplicação automática da “Uglify” sempre que os arquivos JS fossem salvos.
 
-## Diferenciais
-- Uso de pré-processadores CSS (Sass, Less)
-- Acessibilidade
-- SEO
-- Performance
-- Fazer os filtros da sidebar funcionarem através de Javascript
-- Utilizar alguma automatização (Grunt, Gulp, ...)
+-	SASS - Empregada para a otimização e organização da criação do CSS.
+	
+-	Font awesome - Para inserção dos ícones nos elementos do projeto.
 
-## O que será avaliado
-- Estrutura e organização do código e dos arquivos
-- Soluções adotadas
-- Tecnologias utilizadas
-- Qualidade
-- Fidelidade ao layout
-- Enfim, tudo será observado e levado em conta
 
-## Como iniciar o desenvolvimento
-- Instale o [npm](https://nodejs.org/en/download/)
-- Fork este repositório na sua conta do Bitbucket
-- Crie uma branch com o nome **desafio**
-- Instale as dependências
-```
-npm install
-```
-- Rode a aplicação
-```
-npm start
-```
-- Acesse http://localhost:8888
-- Realize o desenvolvimento na pasta public
+## Soluções Adotadas
+- Estratégias
 
-## Como enviar seu teste
-- Envie um email para [carreira@webjump.com.br] com o link do seu repositório
+Uma pasta chamada “dist” foi criada na “public” para conter o arquivo “main.js”, que é um compilado minificado pelo Grunt dos arquivos JS criados na pasta “assets” . O CSS modificado pelo SASS também foi destinado a esta pasta. Isso foi feito  para garantir a otimização no carregamento das páginas. 
+Foi utilizada a metodologia BEM para organização da nomenclatura das classes de CSS.
+Criei uma página chamada categoria, cujo conteúdo, exceto o header e o footer, é renderizado através de javascript pelo consumo da API disponibilizada. A categoria da página é determinada pelo valor do parâmetro ID contido na URL.
+O wrapper do item de produto foi deixado como div porque não foi passado o comportamento de ecommerce: em alguns casos o elemento inteiro é um link que leva a página do produto, em outros o botão comprar adiciona direto no carrinho, por isso deixei sem link.
+No responsivo, foram adicionados outros breakpoints para manter a consistência do layout. Também foram usados elementos que só aparecem no breakpoint 468px para exibir a barra de pesquisa e navegação do header. Esses elementos fecham ao pressionar Esc ou clicar fora do header e também quando outro elemento deste tipo é clicado.
 
-- Se o seu repositório for privado, solicite os emails das pessoas responsáveis para conceder acesso de leitura ao seu repositório.
+- Modificações
 
-## API
-- Categorias: http://localhost:8888/api/V1/categories/list  
-O endpoint de categoria deve ser utilizado para montar o menu do cabeçalho.
+Foi necessária a modificação de um parâmetro do arquivo “app.js” que está localizado fora da pasta “public”, porque estava impedindo o acesso correto a outras páginas que não fossem a index.html. Também foi feita uma alteração no arquivo “list” contido dentro da pasta “mock-api” porque as propriedades “name” e “path” do terceiro item estavam com o valor “calçados”e foram modificados para “sapatos” para manter fidelidade ao modelo base apresentado no repositório. No arquivo 3 da API, alterei o valor de uma propriedade de cor que estava com o valor “preto”, sendo que já havia uma cor com o valor “preta” em outro produto e isso estava gerando problema na renderização do filtro de cores.
 
-**Response**
-```
-{
-  "items": [
-    {
-      "id": 1,
-      "name": "Camisetas",
-      "path": "camisetas"
-    },
-    ...
-  ]
-}
-```
+- Impasses
 
-- Produtos da Categoria: http://localhost:8888/api/V1/categories/{id}  
-O endpoint de produtos da categoria deve ser consumido para listar os produtos da categoria quando o usuário clicar em um dos menus.
+Tive que deixar o header e o footer estáticos, repetindo nas duas páginas, porque a forma como estou habituado a fazer é através do uso do include do PHP e eu não queria fazer o uso desta linguagem, pois foi pedido o foco no emprego do javascript, HTML e CSS. Eu poderia ter feito uma injeção do conteúdo do header e footer com um script js, mas o conteúdo da tag head iria ter que se repetir para poder fazer a chamada do script para a realização de tal operação.
+	Outro problema que enfrentei, foi a divergência de cores que encontrei nos modelos do repositório com o arquivo do Adobe XD. Para manter consistência eu decidi escolher o modelo de cores das imagens do repositório e o usar o XD como referência para tamanho de elementos e fontes.
 
-**Response**
-```
-{
-  "filters": [
-      {
-          "color": "Cor"
-      }
-  ],
-  "items": [
-    {
-      "id": 31,
-      "sku": "sku-31",
-      "path": "tenis-preto-couro",
-      "name": "Tênis Preto Couro",
-      "image": "media/shoes-1.jpg",
-      "price": 129.9,
-      "specialPrice": 80, //Optional
-      "filter": [
-        {
-          "color": "Preta"
-        }
-      ]
-    },
-    ...
-  ]
-}
-```
