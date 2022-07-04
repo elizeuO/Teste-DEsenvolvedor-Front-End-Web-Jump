@@ -17,12 +17,26 @@
 	
 -	Font awesome - Para inserção dos ícones nos elementos do projeto.
 
+## Funcionalidades
+- Acessibilidade(Testar o site com um leitor de tela, recomendo o chromevox porque é uma extensão do google chrome).
+- Filtros funcionais conforme a API
+- Reset de filtros
+- Responsividade
+- Elementos de navegação adaptados para mobile (barra de pequisa e de navegação)
+- Exibição dos produtos por grade ou lista (através dos botões abaixo do título principal da página de categorias)
+
 ## Passo a passo para instalação do projeto
 - Instalar o npm
 - Realizar a clonagem do projeto para o seu repositório local.
 - Checar se o branch atual é o desafio, se não trocar para ele.
-- Instalar as dependências com o comando npm install
-- Rodar a aplicação com o comando npm start
+- Instalar as dependências
+```
+npm install
+``` 
+- Rodar a aplicação 
+```
+npm start
+```
 - Acesse http://localhost:8888
 
 ## Soluções Adotadas
@@ -50,6 +64,8 @@ Tive que deixar o header e o footer estáticos, repetindo nas duas páginas, por
 Outro problema que enfrentei, foi a divergência de cores que encontrei nos modelos do repositório com o arquivo do Adobe XD. Para manter consistência eu decidi escolher o modelo de cores das imagens do repositório e o usar o XD como referência para tamanho de elementos e fontes.
 
 Nos produtos, inicialmente para resolver o problema da quebra de alinhamento por conta do diferente número de palavras de produto pra produto eu havia feito um estilo para que os botões ficassem alinhados, porém estava ficando um espaço vazio entre a imagem e o título. Isso estava me incomodando porque se o título fosse curto ele ficava maior, por isso optei por cancelar essa solução.
+
+O site não foi testado no navegador Safari porque o mesmo estava apresentando problemas de carregamento de estilo e mau comportamento no meu computador (os demais navegadores citados no desafio foram testados).
 
 ### Melhorias futuras
 - Desenvolver paginação
