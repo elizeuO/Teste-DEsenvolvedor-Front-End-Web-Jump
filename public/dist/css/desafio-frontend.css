@@ -32,7 +32,7 @@ Colors
 Transition
 -------------------------------------------------------------------*/
 .c-pagination .c-pagination__prev-next,
-.c-pagination .c-pagination__page, .c-section--product .c-product .c-product__info .c-product__button, .c-section--product .c-sort-bar__display-button, .c-header .c-header__bottom, .c-header .c-header__mid .c-search .c-search__submit, a {
+.c-pagination .c-pagination__page, .c-section--product .c-product .c-product__info .c-product__button, .c-section--product .c-sort-bar__display-button, .c-section--product aside nav ul li, .c-header .c-header__bottom, .c-header .c-header__mid .c-search .c-search__submit, a {
   transition: all 300ms;
 }
 
@@ -296,6 +296,9 @@ select {
   color: #626262;
   cursor: pointer;
 }
+.c-section--product aside nav ul li:hover, .c-section--product aside nav ul li:focus, .c-section--product aside nav ul li.active {
+  color: #CB0D1F;
+}
 .c-section--product aside nav ul li:before {
   left: 0;
   background: #626262;
@@ -305,6 +308,9 @@ select {
   padding: 1.7px;
   height: 30px;
   width: 33.33%;
+}
+.c-section--product aside nav ul li[color].active {
+  border: 2px solid #CB0D1F;
 }
 .c-section--product aside nav ul li[color]:before {
   content: "";

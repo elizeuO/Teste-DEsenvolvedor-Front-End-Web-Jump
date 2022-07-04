@@ -224,11 +224,11 @@ function setColorListElements(productData) {
 
   colors.forEach((color) => {
     content +=
-      '<li class="l__col-4 js-filter-button" type="color" color="' +
+      '<li role="button" class="l__col-4 js-filter-button" type="color" color="' +
       color +
       '" title="Filtrar por cor ' +
       color +
-      '"></li>';
+      ' " aria-pressed="false" tabindex="0"></li>';
   });
 
   content += '</ul>';
@@ -251,7 +251,7 @@ function setGenderListElements(productData) {
   });
 
   genders.forEach((gender) => {
-    result += '<li class="js-filter-button" type="gender" gender="'+gender+'">' + gender + '</li>';
+    result += '<li role="button" class="js-filter-button" type="gender" gender="'+gender+'" aria-pressed="false" tabindex="0">' + gender + '</li>';
   });
 
   return result;

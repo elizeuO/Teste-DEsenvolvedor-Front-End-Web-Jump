@@ -368,10 +368,15 @@ select {
             max-width: 90%;
 
             li {
+                @extend %transition;
                 padding-left: 10px;
                 padding-right: 10px;
                 color: #626262;
                 cursor: pointer;
+
+                &:hover, &:focus, &.active{
+                    color: $colorDarkRed;
+                }
 
                 &:before {
                     left: 0;
@@ -383,6 +388,10 @@ select {
                     padding: 1.7px;
                     height: 30px;
                     width: 33.33%;
+
+                    &.active{
+                        border: 2px solid $colorDarkRed;
+                    }
 
                     &:before {
                         content: '';
