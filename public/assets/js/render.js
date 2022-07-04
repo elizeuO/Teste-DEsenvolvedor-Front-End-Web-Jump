@@ -105,7 +105,7 @@ function renderProductContent(productData, categoryItem) {
     '<div class="c-product-wrapper js-product-wrapper" layout="grid">' +
     '<div class="l-flex l-flex--center l-flex--wrap l-flex--stretch l-flex--negative">';
 
-  productListWrapper += renderProducts(productData) + "</div>";
+  productListWrapper += renderProducts(productData.items) + "</div>";
 
   content += productListWrapper + renderPagination();
 
@@ -114,7 +114,7 @@ function renderProductContent(productData, categoryItem) {
 
 //Render product items
 function renderProducts(productData) {
-  let products = productData.items;
+  let products = productData;
   let content = "";
 
   products.forEach((product) => {
@@ -224,14 +224,14 @@ function setColorListElements(productData) {
 
   colors.forEach((color) => {
     content +=
-      '<li role="button" class="l__col-4" color="' +
+      '<li class="l__col-4 js-filter-button" type="color" color="' +
       color +
       '" title="Filtrar por cor ' +
       color +
       '"></li>';
   });
 
-  content += "</ul>";
+  content += '</ul>';
 
   return content;
 }
@@ -251,7 +251,7 @@ function setGenderListElements(productData) {
   });
 
   genders.forEach((gender) => {
-    result += "<li>" + gender + "</li>";
+    result += '<li class="js-filter-button" type="gender" gender="'+gender+'">' + gender + '</li>';
   });
 
   return result;

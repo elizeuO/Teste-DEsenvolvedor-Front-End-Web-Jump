@@ -48,3 +48,44 @@ function removeActiveStateLayoutButton() {
     layoutButton.classList.remove("active");
   });
 }
+
+//Filter products by color or gender
+function filterProducts(filterData) {
+  let type = filterData.getAttribute("type");
+  let productData = getMockAPIProductList(getCategoryID()).items;
+
+  let productWrapper = document.querySelector(".js-product-wrapper .l-flex");
+
+  if (null === productWrapper) {
+    return;
+  }
+
+  let value = filterData.getAttribute(type);
+
+  let filteredData = productData.filter((item) => {
+
+    if (item.filter.pop()[type] === value) {
+      return item;
+    }
+
+  });
+
+ productWrapper.innerHTML= renderProducts(filteredData);
+}
+
+document.addEventListener("click", (ev) => {
+  let button = ev.target.closest(".js-filter-button");
+
+  if (null === button) {
+    return;
+  }
+
+  filterProducts(button);
+});
+
+function getCategoryID() {
+  let searchParams = new URLSearchParams(window.location.search);
+  const categoryID = searchParams.get("id");
+
+  return categoryID;
+}
