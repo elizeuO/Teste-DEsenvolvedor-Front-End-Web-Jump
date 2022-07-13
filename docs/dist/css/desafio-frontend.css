@@ -3,17 +3,17 @@ Typography
 -------------------------------------------------------------------*/
 @font-face {
   font-family: openSans;
-  src: url(/assets/fonts/OpenSans-Regular.ttf);
+  src: url(/Teste-Desenvolvedor-Front-End-Web-Jump/assets/fonts/OpenSans-Regular.ttf);
 }
 @font-face {
   font-family: openSans;
   font-weight: 600;
-  src: url(/assets/fonts/OpenSans-Bold.ttf);
+  src: url(/Teste-Desenvolvedor-Front-End-Web-Jump/assets/fonts/OpenSans-Bold.ttf);
 }
 @font-face {
   font-family: openSans;
   font-weight: 900;
-  src: url(/assets/fonts/OpenSans-ExtraBold.ttf);
+  src: url(/Teste-Desenvolvedor-Front-End-Web-Jump/assets/fonts/OpenSans-ExtraBold.ttf);
 }
 h1,
 h2,

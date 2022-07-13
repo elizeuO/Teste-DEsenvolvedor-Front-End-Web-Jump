@@ -1,7 +1,3 @@
-/*-------------------------------------------------------------------
-Github
--------------------------------------------------------------------*/
-$github-url: '/Teste-Desenvolvedor-Front-End-Web-Jump';
 
 /*-------------------------------------------------------------------
 Typography
@@ -9,19 +5,19 @@ Typography
 
 @font-face {
     font-family: openSans;
-    src: url($github-url/assets/fonts/OpenSans-Regular.ttf)
+    src: url(/Teste-Desenvolvedor-Front-End-Web-Jump/assets/fonts/OpenSans-Regular.ttf)
 }
 
 @font-face {
     font-family: openSans;
     font-weight: 600;
-    src: url($github-url/assets/fonts/OpenSans-Bold.ttf)
+    src: url(/Teste-Desenvolvedor-Front-End-Web-Jump/assets/fonts/OpenSans-Bold.ttf)
 }
 
 @font-face {
     font-family: openSans;
     font-weight: 900;
-    src: url($github-url/assets/fonts/OpenSans-ExtraBold.ttf)
+    src: url(/Teste-Desenvolvedor-Front-End-Web-Jump/assets/fonts/OpenSans-ExtraBold.ttf)
 }
 
 $mainFont: openSans;
