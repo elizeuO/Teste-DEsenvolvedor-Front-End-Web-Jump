@@ -1,3 +1,6 @@
+//Git hub page path
+const gitHubURL = '/Teste-Desenvolvedor-Front-End-Web-Jump';
+
 //Render page link items and categories items
 function renderNavigationWithCategories() {
   let categories = getMockAPICategoryList();
@@ -9,7 +12,7 @@ function renderNavigationWithCategories() {
   }
 
   elements.forEach((element) => {
-    let result = '<li><a href="/">Página inicial</a> </li>';
+    let result = '<li><a href="/Teste-Desenvolvedor-Front-End-Web-Jump">Página inicial</a> </li>';
 
     result +=
       setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
@@ -77,7 +80,7 @@ function renderBreadcrumb(categoryName) {
   }
 
   element.innerHTML =
-    '<a href="/">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">' +
+    '<a href="/Teste-Desenvolvedor-Front-End-Web-Jump">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">' +
     categoryName +
     "</span>";
 }
