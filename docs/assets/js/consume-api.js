@@ -17,7 +17,7 @@ function getAPIURL(url) {
   
   //Consume Mock-API products data
   function getMockAPIProductList(ID) {
-    let data = getAPIURL("/Teste-Desenvolvedor-Front-End-Web-Jump/mock-api/V1/categories" + ID);
+    let data = getAPIURL("/Teste-Desenvolvedor-Front-End-Web-Jump/mock-api/V1/categories/" + ID);
   
     return JSON.parse(data);
   }

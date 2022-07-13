@@ -26,7 +26,7 @@ function setCategoryListElements(categories) {
 
   categories.forEach((category) => {
     result +=
-      '<li><a href="/categoria.html?id=' +
+      '<li><a href="'+gitHubURL+'/categoria.html?id=' +
       category.id +
       '">' +
       category.name +
