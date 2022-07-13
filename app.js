@@ -15,7 +15,7 @@ function setJsonHeaders (res, path) {
 }
 
 // Serve up public folder
-app.use('/', serveStatic('public'))
+app.use('/', serveStatic('docs'))
 
 app.listen(8888, function() {
     console.log('Acesse: http://localhost:8888')
