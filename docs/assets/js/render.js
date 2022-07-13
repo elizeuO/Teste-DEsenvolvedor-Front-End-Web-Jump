@@ -125,7 +125,7 @@ function renderProducts(productData) {
     content +=
       '<article class="l__col-3">' +
       '<div class= "c-product js-product" tabindex="0">' +
-      '<div class= "c-product__img l-flex l-flex--center"><img src="/assets/img/' +
+      '<div class= "c-product__img l-flex l-flex--center"><img src="'+gitHubURL+'/assets/img/' +
       product.image +
       '" aria-hidden="true"></div>' +
       '<div class="c-product__info"><h2>' +
