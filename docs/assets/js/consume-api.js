@@ -10,14 +10,14 @@ function getAPIURL(url) {
   
   //Consume Mock-API category list data
   function getMockAPICategoryList() {
-    let data = getAPIURL("/Teste-Desenvolvedor-Front-End-Web-Jump/api/V1/categories/list");
+    let data = getAPIURL(gitHubURL+"/api/V1/categories/list");
   
     return JSON.parse(data).items;
   }
   
   //Consume Mock-API products data
   function getMockAPIProductList(ID) {
-    let data = getAPIURL("/Teste-Desenvolvedor-Front-End-Web-Jump/api/V1/categories/" + ID);
+    let data = getAPIURL(gitHubURL+"/Teste-Desenvolvedor-Front-End-Web-Jump/api/V1/categories/" + ID);
   
     return JSON.parse(data);
   }

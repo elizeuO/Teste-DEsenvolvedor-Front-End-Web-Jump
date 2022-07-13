@@ -12,10 +12,10 @@ function renderNavigationWithCategories() {
   }
 
   elements.forEach((element) => {
-    let result = '<li><a href="/Teste-Desenvolvedor-Front-End-Web-Jump">Página inicial</a> </li>';
+    let result = '<li><a href="'+gitHubURL+'">Página inicial</a> </li>';
 
     result +=
-      setCategoryListElements(categories) + '<li><a href="">Contato</a></li>';
+      setCategoryListElements(categories) + '<li><a href="'+gitHubURL+'">Contato</a></li>';
     element.innerHTML = result;
   });
 }
@@ -80,7 +80,7 @@ function renderBreadcrumb(categoryName) {
   }
 
   element.innerHTML =
-    '<a href="/Teste-Desenvolvedor-Front-End-Web-Jump">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">' +
+    '<a href="'+gitHubURL+'">Página inicial</a> <span aria-hidden="true">></span> <span class="c-breadcrumb__current">' +
     categoryName +
     "</span>";
 }
